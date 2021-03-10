@@ -2,8 +2,11 @@ version: '3.3'
 services:
   php:
     build: ./docker/php
+    container_name: test_php
     volumes:
       - ./:/var/www/html
+    environment:
+      XDEBUG_CONFIG: "remote_host=host.docker.internal remote_enable=1"
 
   nginx:
     image: nginx:latest
