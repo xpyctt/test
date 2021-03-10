@@ -19,6 +19,7 @@ services:
 
   composer:
     image: composer:latest
+    container_name: test_composer
     command: [ 'validate' ]
     volumes:
       - ./:/app
